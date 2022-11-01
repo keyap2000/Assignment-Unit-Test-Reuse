@@ -29,7 +29,7 @@ public class ClassCourseList extends ArrayList<Course> {
 //      theCourse.CourseName= strCourseName;
 				add(theCourse);
 			}
-		} catch (Exception ee) {
+		} catch (Exception ignored) {
 			;
 		}
 	}

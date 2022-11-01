@@ -1,11 +1,11 @@
 package hacs;
 
-/**
- * Title:        HACS
- * Description:  CSE870 Homework 3:  Implementing Design Patterns
- * Copyright:    Copyright (c) 2002
- * Company:      Department of Computer Science and Engineering, Michigan State University
- * @author Ji Zhang, Wei Zhu
+/*
+  Title:        HACS
+  Description:  CSE870 Homework 3:  Implementing Design Patterns
+  Copyright:    Copyright (c) 2002
+  Company:      Department of Computer Science and Engineering, Michigan State University
+  @author Ji Zhang, Wei Zhu
  * @version 1.0
  */
 
@@ -37,17 +37,11 @@ public class Assignment {
   public boolean IsOverDue(){
     Date today;
     today = new Date();
-    if (today.after(this.DueDate)) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return today.after(this.DueDate);
   }
 
   public Solution AddSolution(){
-    Solution mySolution = new Solution();
-    return mySolution;
+    return new Solution();
   }
 
   ////add the theSolution to the Solutionlist
@@ -76,8 +70,7 @@ public class Assignment {
 
   public SolutionIterator GetSolutionIterator()
   {
-    SolutionIterator theSolutionIterator=new SolutionIterator(theSolutionList);
-    return theSolutionIterator;
+    return new SolutionIterator(theSolutionList);
   }
 
   public String toString()

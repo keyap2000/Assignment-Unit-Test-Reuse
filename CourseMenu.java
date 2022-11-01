@@ -101,23 +101,21 @@ abstract public class CourseMenu extends JDialog
   void refresh()
   {
     AssignmentCombox.removeAllItems() ;
-    Iterator Iter=theCourse.assignmentList.iterator() ;
-    while(Iter.hasNext() )
-    {
-      AssignmentCombox.addItem(Iter.next() );
+    for (Assignment assignment : theCourse.assignmentList) {
+      AssignmentCombox.addItem(assignment);
     }
   }
 
   void buttonChangeCourse_actionPerformed(ActionEvent e)
   {
     bLogout=false;
-    hide();
+    dispose();
   }
 
   void buttonLogout_actionPerformed(ActionEvent e)
   {
     bLogout=true;
-    hide();
+    dispose();
   }
   boolean ifLogout()
   {
