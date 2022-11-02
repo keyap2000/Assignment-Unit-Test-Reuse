@@ -11,7 +11,7 @@ package hacs;
  * Update to Java 8
  */
 
-public class Hacs {
+public class Hacs{
 
 	static Facade theFacade = new Facade();
 

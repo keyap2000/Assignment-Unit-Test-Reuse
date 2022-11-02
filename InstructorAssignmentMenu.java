@@ -2,8 +2,7 @@ package hacs;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
+import java.awt.event.ActionEvent;
 import java.text.DateFormat;
 
 /**
@@ -111,7 +110,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     tbDueDate.setText(theDateFormat.format(theAssignment.DueDate));
     tbSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName );
     refreshSolutionList();
-    show();
+    setVisible(true);
   }
 
   void buttonClose_actionPerformed(ActionEvent e)
@@ -121,9 +120,9 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     try
     {
       theAssignment.DueDate=tempDateFormat.parse(tbDueDate.getText() );
-    }catch (Exception ee){};
+    }catch (Exception ignored){};
     theAssignment.SuggestSolution.SolutionFileName =tbSuggestedSolution.getText() ;
-    hide();
+    dispose();
   }
 
   void buttonGrade_actionPerformed(ActionEvent e)

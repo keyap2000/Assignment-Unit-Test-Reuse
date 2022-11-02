@@ -88,7 +88,7 @@ public class Login extends JDialog {
 		m_bExit = false;
 		System.out.println("login clicked");
 		try {
-			if (StudentRadio.isSelected() == true)//// student
+			if (StudentRadio.isSelected())//// student
 			{
 				UserType = USER_TYPE.Student; /// 0 for student
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
@@ -108,9 +108,9 @@ public class Login extends JDialog {
 					LoginName = UserName;
 			}
 			if (LoginName != null) {
-				this.hide();
+				this.dispose();
 			}
-		} catch (Exception ee) {
+		} catch (Exception ignored) {
 			;
 		}
 
@@ -148,6 +148,6 @@ public class Login extends JDialog {
 
 	void buttonExit_actionPerformed(ActionEvent e) {
 		m_bExit = true;
-		hide();
+		dispose();
 	}
 }

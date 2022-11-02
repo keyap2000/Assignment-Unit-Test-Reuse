@@ -1,0 +1,14 @@
+Invalid username or password - user doesn't get logged in and login page persists
+add assignment form - grade - select not working
+add assignment report button --> redirect course menu
+
+view button working in course menu
+radio button in course menu (both can be selected)
+high level -- add button not working(so view button not tested)
+
+upcoming assignments due working correctly
+
+grade -1 in assignment submission by default
+
+user and course linking is working correctly
+

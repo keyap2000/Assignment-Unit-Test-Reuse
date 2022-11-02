@@ -18,9 +18,6 @@ public class SolutionIterator implements Iterator
   ///  CurrentSolutionNumber: point to the location before the first element
   int CurrentSolutionNumber=-1;
 
-  public SolutionIterator()
-  {
-  }
   public SolutionIterator(SolutionList thesolutionlist)
   {
     solutionlist=thesolutionlist;
@@ -35,17 +32,12 @@ public class SolutionIterator implements Iterator
 
   public boolean hasNext()
   {
-    /**@todo: Implement this java.util.Iterator method*/
-    if (CurrentSolutionNumber>=solutionlist.size()-1)
-      return false;
-    else
-      return true;
+    return CurrentSolutionNumber < solutionlist.size() - 1;
 //    throw new java.lang.UnsupportedOperationException("Method hasNext() not yet implemented.");
   }
   public Object next()
   {
-    /**@todo: Implement this java.util.Iterator method*/
-    if (hasNext()==true)
+    if (hasNext())
     {
       CurrentSolutionNumber ++;
       return solutionlist.get(CurrentSolutionNumber);
@@ -75,10 +67,7 @@ public class SolutionIterator implements Iterator
 
   public void remove()
   {
-    /**@todo: Implement this java.util.Iterator method*/
     solutionlist.remove(CurrentSolutionNumber);
 //    throw new java.lang.UnsupportedOperationException("Method remove() not yet implemented.");
   }
-
-
 }

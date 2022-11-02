@@ -2,9 +2,8 @@ package hacs;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.util.Date;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
@@ -113,9 +112,9 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		lDueDate.setText(theAssignment.DueDate.toString());
 		lSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
 
-		show();
+		setVisible(true);
 
-		if (boolSubmit == true) {
+		if (boolSubmit) {
 			if (theSolution == null) {
 				theSolution = new Solution();
 				theAssignment.AddSolution(theSolution);
@@ -128,12 +127,12 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 	void bSubmit_actionPerformed(ActionEvent e) {
 		boolSubmit = true;
-		hide();
+		dispose();
 	}
 
 	void bCancel_actionPerformed(ActionEvent e) {
 		boolSubmit = false;
-		hide();
+		dispose();
 	}
 
 }

@@ -8,9 +8,9 @@ package hacs;
  * @author Zhang ji Zhu Wei
  * @version 1.0
  */
-import javax.swing.*;
+
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
 
 public class LowLevelCourseMenu extends CourseMenu {
 
@@ -18,7 +18,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 	}
 
 	void ShowMenu(Course theCourse) {
-		show();
+		setVisible(true);
 	}
 
 	void ShowAddButtons() {

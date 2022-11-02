@@ -1,7 +1,7 @@
 package hacs;
 
-import java.util.Iterator;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
@@ -25,9 +25,6 @@ public class ReminderVisitor extends NodeVisitor {
 
 	Reminder m_Reminder;
 
-	public ReminderVisitor() {
-	}
-
 	public ReminderVisitor(Reminder reminder) {
 		m_Reminder = reminder;
 	}
@@ -41,9 +38,7 @@ public class ReminderVisitor extends NodeVisitor {
 	}
 
 	public void visitCourse(Course course) {
-		Iterator<Assignment> assignmentList = course.assignmentList.listIterator();
-		while (assignmentList.hasNext()) {
-			Assignment assignment = (Assignment) assignmentList.next();
+		for (Assignment assignment : course.assignmentList) {
 			assignment.accept(this);
 		}
 	}
