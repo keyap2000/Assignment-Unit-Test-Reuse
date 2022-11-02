@@ -55,7 +55,7 @@ abstract public class Person {
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
 			theAssignment = (Assignment) theIter.next();
-			theCourseMenu.AssignmentCombox.addItem(theAssignment);
+			theCourseMenu.assignmentCombox.addItem(theAssignment);
 		}
 		return false;
 	}

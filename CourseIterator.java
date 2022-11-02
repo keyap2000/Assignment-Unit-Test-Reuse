@@ -14,27 +14,27 @@ import java.util.Iterator;
 public class CourseIterator implements Iterator
 {
   ClassCourseList theCourseList;
-  int CurrentCourseNumber=-1;
+  int currentCourseNumber =- 1;
 
   public CourseIterator(ClassCourseList courseList) {
     theCourseList=courseList;
   }
 
   public boolean hasNext() {
-    return CurrentCourseNumber < theCourseList.size() - 1;
+    return currentCourseNumber < theCourseList.size() - 1;
   }
 
   public Object next() {
     if (hasNext()) {
-      CurrentCourseNumber ++;
-      return theCourseList.get(CurrentCourseNumber);
+      currentCourseNumber ++;
+      return theCourseList.get(currentCourseNumber);
     }
     else {
       return null;
     }
   }
   public void remove() {
-    theCourseList.remove(CurrentCourseNumber);
+    theCourseList.remove(currentCourseNumber);
   }
 
   public Object next(String CourseName) {

@@ -30,12 +30,12 @@ public class Hacs{
 			theFacade.AttachCourseToUser();
 			if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student)
 				theFacade.Remind();
-			boolean bLogout = false;
-			while (!bLogout) {
-				bLogout = theFacade.SelectCourse();
-				if (bLogout)
+			boolean blogout = false;
+			while (!blogout) {
+				blogout = theFacade.SelectCourse();
+				if (blogout)
 					break;
-				bLogout = theFacade.CourseOperation();
+				blogout = theFacade.CourseOperation();
 			}
 		}
 	}

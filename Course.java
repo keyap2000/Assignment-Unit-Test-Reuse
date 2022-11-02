@@ -15,16 +15,16 @@ import java.util.*;
  */
 
 public class Course {
-  String CourseName;
+  String courseName;
   public ArrayList<Assignment> assignmentList=new ArrayList<>();
-  int NumOfAss;
-  int CourseLevel;
+  int numOfAssignments;
+  int courseLevel;
 
 
   public Course(String strCourse, int theLevel) {
-    this.CourseName = strCourse;
-    this.CourseLevel = theLevel;
-    this.NumOfAss = 0;
+    this.courseName = strCourse;
+    this.courseLevel = theLevel;
+    this.numOfAssignments = 0;
   }
   
   public void AddAssignment(Assignment newAss) {
@@ -32,7 +32,7 @@ public class Course {
   }
   
   public String toString() {
-    return CourseName;
+    return courseName;
   }
   
   void accept(NodeVisitor visitor) {

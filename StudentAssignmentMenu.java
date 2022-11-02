@@ -102,14 +102,14 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 			tbSolution.setText("");
 			lGrade.setText("-1");
 		} else {
-			tbSolution.setText(theSolution.SolutionFileName);
+			tbSolution.setText(theSolution.solutionFileName);
 			lGrade.setText(theSolution.getGradeString());
 
 		}
 
 		lAssignmentName.setText(theAssignment.assName);
 		lDueDate.setText(theAssignment.dueDate.toString());
-		lSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
+		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
 
 		setVisible(true);
 
@@ -119,8 +119,8 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 				theAssignment.AddSolution(theSolution);
 			}
 			theSolution.theAuthor = thePerson.UserName;
-			theSolution.SolutionFileName = tbSolution.getText();
-			theSolution.theSubmitData = new Date();
+			theSolution.solutionFileName = tbSolution.getText();
+			theSolution.theSubmittedDate = new Date();
 		}
 	}
 

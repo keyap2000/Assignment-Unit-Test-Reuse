@@ -14,7 +14,7 @@ import java.io.*;
  */
 
 public class Facade {
-	public int UserType;
+	public int userType;
 	private Course theSelectedCourse = null;
 	private int nCourseLevel = 0;
 	ClassCourseList theCourseList;
@@ -159,16 +159,16 @@ public class Facade {
 	 * get the user name from aline UserName:CourseName
 	 */
 	private String GetUserName(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(0, Sep);
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(0, sep);
 	}
 
 	/*
 	 * get the CourseName from aline UserName:CourseName
 	 */
 	private String GetCourseName(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(Sep + 1, aline.length());
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(sep + 1, aline.length());
 	}
 
 	/*
@@ -202,8 +202,8 @@ public class Facade {
 	 * pointer of the Course if not fine, return null;
 	 */
 	private Course FindCourseByCourseName(String strCourseName) {
-		CourseIterator Iterator = new CourseIterator(theCourseList);
-		return (Course) Iterator.next(strCourseName);
+		CourseIterator iterator = new CourseIterator(theCourseList);
+		return (Course) iterator.next(strCourseName);
 	}
 
 }
