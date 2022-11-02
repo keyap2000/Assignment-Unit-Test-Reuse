@@ -32,23 +32,19 @@ abstract public class CourseMenu extends JDialog
   JButton buttonChangeCourse = new JButton();
   JButton buttonLogout = new JButton();
 
-  public CourseMenu()
-  {
+  public CourseMenu() {
 
-    try
-    {
+    try {
       jbInit();
     }
-    catch(Exception e)
-    {
+    catch(Exception e) {
       e.printStackTrace();
     }
     setModal(true);
     setSize(503,294);
   }
 
-  private void jbInit() throws Exception
-  {
+  private void jbInit() throws Exception {
     buttonChangeCourse.setText("ChangeCourse");
     buttonChangeCourse.setBounds(new Rectangle(101, 211, 73, 37));
     buttonChangeCourse.addActionListener(new java.awt.event.ActionListener()
@@ -117,8 +113,7 @@ abstract public class CourseMenu extends JDialog
     bLogout=true;
     dispose();
   }
-  boolean ifLogout()
-  {
+  boolean ifLogout() {
     return bLogout;
   }
 }

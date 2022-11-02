@@ -12,3 +12,4 @@ grade -1 in assignment submission by default
 
 user and course linking is working correctly
 
+no assignments to view - throw exception

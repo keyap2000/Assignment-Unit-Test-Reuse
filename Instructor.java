@@ -9,11 +9,11 @@ package hacs;
 
 public class Instructor extends Person {
 	public Instructor() {
-		type = 1;// type=1 :instructor
+		type = 1;
 	}
 
 	public CourseMenu CreateCourseMenu(Course theCourse, int theLevel) {
-		if (theLevel == 0)/// 0: Highlevel defined in CourseSeletDlg.
+		if (theLevel == 0)
 		{
 			theCourseMenu = new HighLevelCourseMenu();
 		} else/// 1: LowLevel

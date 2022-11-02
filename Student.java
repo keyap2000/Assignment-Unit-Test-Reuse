@@ -12,16 +12,14 @@ package hacs;
 public class Student extends Person {
 
 	public Student() {
-		type = 0; // type=0: student
+		type = 0;
 	}
 
 	public CourseMenu CreateCourseMenu(Course theCourse, int theLevel) {
 
-		if (theLevel == 0) // 0: Highlevel defined in CourseSelectDlg.
-		{
+		if (theLevel == 0) {
 			theCourseMenu = new HighLevelCourseMenu();
-		} else // 1: LowLevel
-		{
+		} else {
 			theCourseMenu = new LowLevelCourseMenu();
 		}
 		return theCourseMenu;

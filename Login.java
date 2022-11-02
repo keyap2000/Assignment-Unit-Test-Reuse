@@ -33,7 +33,7 @@ public class Login extends JDialog {
 	ButtonGroup buttonGroup1 = new ButtonGroup();
 ////// Attributes Added By me
 	private String UserBox = null;
-	private USER_TYPE UserType = USER_TYPE.Student; // default to Student
+	private USER_TYPE UserType = USER_TYPE.Student;
 
 	public Login() {
 		try {
@@ -88,13 +88,11 @@ public class Login extends JDialog {
 		m_bExit = false;
 		System.out.println("login clicked");
 		try {
-			if (StudentRadio.isSelected())//// student
-			{
-				UserType = USER_TYPE.Student; /// 0 for student
+			if (StudentRadio.isSelected()) {
+				UserType = USER_TYPE.Student;
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
-			} else// instructor
-			{
-				UserType = USER_TYPE.Instructor; // 1 for instructor
+			} else {
+				UserType = USER_TYPE.Instructor;
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
 			}
 			UserBox = UserNameText.getText();

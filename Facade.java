@@ -32,7 +32,6 @@ public class Facade {
 		return login.isExit();
 	}
 
-/////////////////////////
 //functions for CourseMenu
 	/*
 	 * When click the add button of the CourseMenu , call this function this
@@ -94,21 +93,18 @@ public class Facade {
 			theSolution = (Solution) theSolutionIterator.next();
 		}
 	}
-////////////////////
 
-//functions for StudentAssignmentMenu
 	void SubmitSolution(Assignment theAssignment, Solution theSolution) {
 		theAssignment.AddSolution(theSolution);
 	}
 
-//////////
 	void Remind() {
 		Reminder theReminder = new Reminder();
 		theReminder.showReminder(thePerson.GetCourseList());
 	}
 
 	void CreateUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student) /// student
+		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student)
 		{
 			thePerson = new Student();
 		} else /// instructor
@@ -136,7 +132,7 @@ public class Facade {
 		try {
 			file = new BufferedReader(new FileReader("UserCourse.txt"));
 			String aline, strUserName, strCourseName;
-			while ((aline = file.readLine()) != null) // not the EOF
+			while ((aline = file.readLine()) != null)
 			{
 				strUserName = GetUserName(aline);
 				strCourseName = GetCourseName(aline);
@@ -150,7 +146,7 @@ public class Facade {
 				}
 			}
 		} catch (Exception ignored) {
-			;
+
 		}
 	}
 

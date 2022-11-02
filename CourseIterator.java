@@ -16,48 +16,36 @@ public class CourseIterator implements Iterator
   ClassCourseList theCourseList;
   int CurrentCourseNumber=-1;
 
-  public CourseIterator(ClassCourseList courseList)
-  {
+  public CourseIterator(ClassCourseList courseList) {
     theCourseList=courseList;
   }
 
-  public boolean hasNext()
-  {
+  public boolean hasNext() {
     return CurrentCourseNumber < theCourseList.size() - 1;
   }
 
-  public Object next()
-  {
-    if (hasNext())
-    {
+  public Object next() {
+    if (hasNext()) {
       CurrentCourseNumber ++;
       return theCourseList.get(CurrentCourseNumber);
     }
-    else
-    {
+    else {
       return null;
     }
   }
-  public void remove()
-  {
+  public void remove() {
     theCourseList.remove(CurrentCourseNumber);
   }
 
-// the next Course that fits the given CourseName
-  public Object next(String CourseName)
-  {
+  public Object next(String CourseName) {
     Course theCourse;
     theCourse=(Course)next();
-    while(theCourse!=null)
-    {
-      if(CourseName.compareTo(theCourse.toString())==0)
-      {
+    while(theCourse!=null) {
+      if(CourseName.compareTo(theCourse.toString())==0) {
         return theCourse;
       }
       theCourse=(Course)next();
     }
     return null;
   }
-
-
 }

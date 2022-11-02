@@ -16,33 +16,26 @@ import java.util.*;
 
 public class Course {
   String CourseName;
-  public ArrayList<Assignment> assignmentList=new ArrayList<Assignment>();
+  public ArrayList<Assignment> assignmentList=new ArrayList<>();
   int NumOfAss;
   int CourseLevel;
 
 
   public Course(String strCourse, int theLevel) {
     this.CourseName = strCourse;
-
-   //0 HighLeve presentation    1  LowLevel Experiment
     this.CourseLevel = theLevel;
-   // this.AssList = NULL;
     this.NumOfAss = 0;
   }
   
-  public void AddAssignment(Assignment newAss)
-  {
+  public void AddAssignment(Assignment newAss) {
     assignmentList.add(newAss);
   }
   
-  public String toString()
-  {
+  public String toString() {
     return CourseName;
   }
   
-  void accept(NodeVisitor visitor)
-  {
+  void accept(NodeVisitor visitor) {
     visitor.visitCourse(this);
   }
-
 }

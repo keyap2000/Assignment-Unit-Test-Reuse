@@ -16,13 +16,10 @@ import java.text.DateFormat;
 
 public class InstructorAssignmentMenu extends AssignmentMenu
 {
-////  class AssignmentMenu
   private boolean bSubmit=false;
   private Solution theSolution;
   private Assignment theAssignment;
   JComboBox CombSolutionList = new JComboBox();
-////////////////////////
-
 
   JTextField tbAssignmentName = new JTextField();
   JTextField tbDueDate = new JTextField();
@@ -35,19 +32,15 @@ public class InstructorAssignmentMenu extends AssignmentMenu
   JButton buttonReport = new JButton();
   JButton buttonClose = new JButton();
 
-  public InstructorAssignmentMenu()
-  {
-    try
-    {
+  public InstructorAssignmentMenu() {
+    try {
       jbInit();
     }
-    catch(Exception e)
-    {
+    catch(Exception e) {
       e.printStackTrace();
     }
   }
-  private void jbInit() throws Exception
-  {
+  private void jbInit() throws Exception {
     jLabel1.setText("Assignment Name");
     jLabel1.setBounds(new Rectangle(25, 31, 118, 18));
     this.getContentPane().setLayout(null);
@@ -100,33 +93,30 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     this.getContentPane().add(buttonGrade, null);
     this.getContentPane().add(buttonReport, null);
   }
-  public void ShowMenu(Assignment assignment, Person person)
-  {
+
+  public void ShowMenu(Assignment assignment, Person person) {
     theAssignment=assignment;
     Solution theSolution;
-    tbAssignmentName.setText(theAssignment.AssName );
+    tbAssignmentName.setText(theAssignment.assName );
 
     DateFormat theDateFormat=DateFormat.getDateInstance(DateFormat.SHORT );
-    tbDueDate.setText(theDateFormat.format(theAssignment.DueDate));
-    tbSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName );
+    tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
+    tbSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName );
     refreshSolutionList();
     setVisible(true);
   }
 
-  void buttonClose_actionPerformed(ActionEvent e)
-  {
-    theAssignment.AssName = tbAssignmentName.getText() ;
+  void buttonClose_actionPerformed(ActionEvent e) {
+    theAssignment.assName = tbAssignmentName.getText() ;
     DateFormat tempDateFormat=DateFormat.getDateInstance(DateFormat.SHORT );
-    try
-    {
-      theAssignment.DueDate=tempDateFormat.parse(tbDueDate.getText() );
-    }catch (Exception ignored){};
-    theAssignment.SuggestSolution.SolutionFileName =tbSuggestedSolution.getText() ;
+    try {
+      theAssignment.dueDate=tempDateFormat.parse(tbDueDate.getText() );
+    } catch (Exception ignored){};
+    theAssignment.suggestSolution.SolutionFileName =tbSuggestedSolution.getText() ;
     dispose();
   }
 
-  void buttonGrade_actionPerformed(ActionEvent e)
-  {
+  void buttonGrade_actionPerformed(ActionEvent e) {
     Solution theSolution=(Solution)CombSolutionList.getSelectedItem() ;
     if (theSolution==null)
        return;
@@ -135,22 +125,18 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     refreshSolutionList();
   }
 
-  void buttonReport_actionPerformed(ActionEvent e)
-  {
+  void buttonReport_actionPerformed(ActionEvent e) {
     SolutionIterator iter=new SolutionIterator(theAssignment.theSolutionList );
-    while(iter.hasNext() )
-    {
+    while(iter.hasNext()) {
       Solution asolution=(Solution)iter.next();
       asolution.setReported(true);
     }
     refreshSolutionList();
   }
-  private void refreshSolutionList()
-  {
+  private void refreshSolutionList() {
     CombSolutionList.removeAllItems() ;
     SolutionIterator SolIter=new SolutionIterator(theAssignment.theSolutionList );
-    while(SolIter.hasNext() )
-    {
+    while(SolIter.hasNext() ) {
       theSolution=(Solution)SolIter.next();
       CombSolutionList.addItem(theSolution);
     }

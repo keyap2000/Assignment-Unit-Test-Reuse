@@ -91,9 +91,9 @@ public class CourseSelectDlg extends JDialog {
 	void OKButton_actionPerformed(ActionEvent e) {
 		SelectedCourse = (Course) CourseNameCom.getSelectedItem();
 		if (HighLevelRadio.isSelected())
-			nCourseLevel = 0; // highlevel course: 0
+			nCourseLevel = 0;
 		else
-			nCourseLevel = 1; // lowlevel course: 1
+			nCourseLevel = 1;
 		dispose();
 	}
 

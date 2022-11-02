@@ -14,30 +14,28 @@ import java.text.DateFormat;
 
 public class Assignment {
 
-  protected String AssName;
+  protected String assName;
   protected String strAssignmentFilename;
-  protected Date DueDate=new Date();
-  protected String AssSpec;
-  protected SolutionList theSolutionList=new SolutionList();
-  protected Solution SuggestSolution=new Solution();
+  protected Date dueDate = new Date();
+  protected String assSpec;
+  protected SolutionList theSolutionList = new SolutionList();
+  protected Solution suggestSolution = new Solution();
 
-
-
-  public Assignment() {
+  public Assignment(){
   }
 
   public void SetDueDate(Date theDueDate){
-    this.DueDate = theDueDate;
+    this.dueDate = theDueDate;
   }
 
   public void SetAssSpec(String theSpec){
-    this.AssSpec = theSpec;
+    this.assSpec = theSpec;
   }
 
   public boolean IsOverDue(){
     Date today;
     today = new Date();
-    return today.after(this.DueDate);
+    return today.after(this.dueDate);
   }
 
   public Solution AddSolution(){
@@ -45,8 +43,7 @@ public class Assignment {
   }
 
   ////add the theSolution to the Solutionlist
-  public void AddSolution(Solution theSolution)
-  {
+  public void AddSolution(Solution theSolution){
     theSolutionList.add(theSolution);
   }
 
@@ -56,36 +53,29 @@ public class Assignment {
   public void getSolutionList(){
   }
 
-  /* return the solution of the give name
-  */
-  public Solution getSolution(String studentname)
-  {
-    SolutionIterator Iterator=(SolutionIterator)theSolutionList.iterator();
+  public Solution getSolution(String studentname){
+    SolutionIterator Iterator = (SolutionIterator)theSolutionList.iterator();
     return (Solution)Iterator.next(studentname);
   }
 
   public Solution getSugSolution(){
-    return SuggestSolution;
+    return suggestSolution;
   }
 
-  public SolutionIterator GetSolutionIterator()
-  {
+  public SolutionIterator GetSolutionIterator(){
     return new SolutionIterator(theSolutionList);
   }
 
-  public String toString()
-  {
-    return AssName;
+  public String toString(){
+    return assName;
   }
 
-  public String getDueDateString()
-  {
-    DateFormat dateFormat=DateFormat.getDateInstance(DateFormat.SHORT);
-    return  dateFormat.format(DueDate);
+  public String getDueDateString(){
+    DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
+    return dateFormat.format(dueDate);
   }
 
-  public void accept(NodeVisitor visitor)
-  {
+  public void accept(NodeVisitor visitor){
     visitor.visitAssignment(this);
   }
 }

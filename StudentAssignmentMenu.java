@@ -14,7 +14,6 @@ import java.util.Date;
 
 public class StudentAssignmentMenu extends AssignmentMenu {
 
-////  class AssignmentMenu
 	private boolean boolSubmit = false;
 	private Solution theSolution;
 	private Assignment theAssignment;
@@ -108,9 +107,9 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 		}
 
-		lAssignmentName.setText(theAssignment.AssName);
-		lDueDate.setText(theAssignment.DueDate.toString());
-		lSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
+		lAssignmentName.setText(theAssignment.assName);
+		lDueDate.setText(theAssignment.dueDate.toString());
+		lSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
 
 		setVisible(true);
 
@@ -134,5 +133,4 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		boolSubmit = false;
 		dispose();
 	}
-
 }

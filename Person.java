@@ -12,7 +12,7 @@ import java.util.*;
  */
 
 abstract public class Person {
-	int type = 0; // type=0 : student, type=1 instructor
+	int type = 0;
 	String UserName;
 	ClassCourseList CourseList;
 	CourseMenu theCourseMenu;
@@ -49,10 +49,7 @@ abstract public class Person {
 		return theCourseMenu.ifLogout();
 	}
 
-	// show the assignment list
 	public boolean ShowMenu() {
-		// create a iterator for the assignment list
-//    Iterator theIter=new ListIterator(CurrentCourse.AssList );
 		Iterator<Assignment> theIter = CurrentCourse.assignmentList.iterator();
 		theCourseMenu.theCourse = CurrentCourse;
 		Assignment theAssignment;
