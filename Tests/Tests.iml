@@ -24,5 +24,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="junit" level="project" />
+    <orderEntry type="module" module-name="Assignment-Unit-Test-Reuse" />
   </component>
 </module>

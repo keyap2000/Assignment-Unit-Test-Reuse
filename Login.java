@@ -40,7 +40,7 @@ public class Login extends JDialog {
 			jbInit();
 			setSize(300, 300);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("invalid");
 		}
 	}
 
@@ -54,7 +54,11 @@ public class Login extends JDialog {
 		loginButton.setBounds(new Rectangle(31, 212, 85, 28));
 		loginButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loginButton_actionPerformed(e);
+				try {
+					loginButton_actionPerformed(e);
+				} catch (Exception ex) {
+					throw new RuntimeException(ex);
+				}
 			}
 		});
 		buttonExit.setText("Exit");
@@ -83,7 +87,7 @@ public class Login extends JDialog {
 		buttonGroup1.add(InstructorRadio);
 	}
 
-	void loginButton_actionPerformed(ActionEvent e) {
+	void loginButton_actionPerformed(ActionEvent e) throws Exception {
 		BufferedReader file;
 		m_bExit = false;
 		System.out.println("login clicked");
@@ -93,23 +97,41 @@ public class Login extends JDialog {
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
 			} else {
 				UserType = USER_TYPE.Instructor;
+				try{
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
+					UserBox = UserNameText.getText();
+					String PasswordBox = new String(PasswordText.getPassword());
+					String LoginName = null;
+					String aline = null, UserName = null, Password = null;
+					while ((aline = file.readLine()) != null) {
+						UserName = GetUserName(aline);
+						Password = GetPassword(aline);
+						if (UserName.compareTo(UserBox) == 0 && Password.compareTo(PasswordBox) == 0)
+							LoginName = UserName;
+					}
+					if (LoginName != null) {
+						this.dispose();
+					}else{
+						m_bExit = true;
+						//isExit();
+						//buttonExit_actionPerformed(e);
+						throw new Exception("Invalid credentials");
+					}
+
+				}
+				catch (RuntimeException exception){
+					System.out.println("invalid credentials");
+					dispose();
+				}
+				catch (FileNotFoundException ex){
+					System.out.println("file not found exception");
+					dispose();
+				}
 			}
-			UserBox = UserNameText.getText();
-			String PasswordBox = new String(PasswordText.getPassword());
-			String LoginName = null;
-			String aline = null, UserName = null, Password = null;
-			while ((aline = file.readLine()) != null) {
-				UserName = GetUserName(aline);
-				Password = GetPassword(aline);
-				if (UserName.compareTo(UserBox) == 0 && Password.compareTo(PasswordBox) == 0)
-					LoginName = UserName;
-			}
-			if (LoginName != null) {
-				this.dispose();
-			}
-		} catch (Exception ignored) {
-			;
+
+
+		} catch (Exception ee) {
+			throw ee;
 		}
 
 	}

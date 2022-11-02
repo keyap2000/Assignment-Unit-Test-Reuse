@@ -23,13 +23,8 @@ public class Facade {
 	public Facade() {
 	}
 
-	static public boolean Login(UserInfoItem userinfoItem) throws RuntimeException {
-		Login login;
-		try{
-			login = new Login();
-		} catch (Exception e){
-			throw new RuntimeException(e);
-		}
+	static public boolean Login(UserInfoItem userinfoItem) {
+		Login login = new Login();
 		login.setModal(true);
 		login.setVisible(true);
 		userinfoItem.strUserName = login.GetUserName();

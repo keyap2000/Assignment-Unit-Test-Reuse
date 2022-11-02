@@ -18,6 +18,8 @@ abstract public class AssignmentMenu extends JDialog
   public AssignmentMenu()
   {
     setModal(true);
-    setSize(575,330);
+    int width = 575;
+    int height = 330;
+    setSize(width,height);
   }
 }

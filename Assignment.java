@@ -19,9 +19,13 @@ public class Assignment {
   protected Date dueDate = new Date();
   protected String assSpec;
   protected SolutionList theSolutionList = new SolutionList();
-  protected Solution suggestSolution = new Solution();
+  public Solution suggestSolution = new Solution();
 
   public Assignment(){
+  }
+
+  public Assignment(String assignmentName, Date deadline, Solution suggestedSolution){
+
   }
 
   public void SetDueDate(Date theDueDate){
