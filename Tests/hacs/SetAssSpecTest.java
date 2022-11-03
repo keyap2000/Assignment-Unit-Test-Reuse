@@ -6,6 +6,6 @@ class SetAssSpecTest {
         String assSpecification = "";
         hacs.Assignment assignment = new hacs.Assignment();
         assignment.SetAssSpec(assSpecification);
-        assert(assSpecification.equals(assignment.assSpec));
+        assert (assSpecification.equals(assignment.assSpec));
     }
 }

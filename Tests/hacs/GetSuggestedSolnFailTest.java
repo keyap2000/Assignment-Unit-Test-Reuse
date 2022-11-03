@@ -11,7 +11,6 @@ class GetSuggestedSolnFailTest {
         Solution suggestedSolution = new Solution();
         Assignment assignment = new Assignment();
         suggestedSolution = assignment.getSugSolution();
-        assertFalse((suggestedSolution.equals(assignment.suggestSolution)));
+        assertFalse ((suggestedSolution.equals(assignment.suggestSolution)));
     }
-
 }

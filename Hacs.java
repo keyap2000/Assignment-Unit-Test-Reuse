@@ -1,5 +1,7 @@
 package hacs;
 
+import java.io.IOException;
+
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
  * 
@@ -18,7 +20,7 @@ public class Hacs{
 	public Hacs() {
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		UserInfoItem userinfoitem = new UserInfoItem();
 		theFacade.CreateCourseList();
 		while (true) {

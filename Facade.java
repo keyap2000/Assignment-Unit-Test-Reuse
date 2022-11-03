@@ -122,7 +122,7 @@ public class Facade {
 	/*
 	 * create a course list and intitialize it with the file CourseInfo.txt
 	 */
-	void CreateCourseList() {
+	void CreateCourseList() throws IOException {
 		theCourseList = new ClassCourseList();
 		theCourseList.InitializeFromFile("CourseInfo.txt");
 	}

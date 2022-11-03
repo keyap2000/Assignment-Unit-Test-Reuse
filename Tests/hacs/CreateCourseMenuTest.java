@@ -11,7 +11,6 @@ class CreateCourseMenuTest {
         int level = f.nCourseLevel;
         Instructor i = new Instructor();
         CourseMenu cm = i.CreateCourseMenu(c, level);
-        assert(cm!=null);
+        assert (cm!=null);
     }
-
 }

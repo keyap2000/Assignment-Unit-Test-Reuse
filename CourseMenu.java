@@ -18,7 +18,7 @@ import java.util.Iterator;
 abstract public class CourseMenu extends JDialog
 {
   Course theCourse;
-  boolean bLogout=true;
+  public boolean bLogout = true;
 
   JRadioButton assignmentRadio = new JRadioButton();
   JComboBox assignmentCombox = new JComboBox();

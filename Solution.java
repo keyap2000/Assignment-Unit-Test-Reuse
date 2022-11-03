@@ -20,7 +20,7 @@ public class Solution {
 	String solutionFileName = "";
 	Date theSubmittedDate = new Date();
 	public int theGrade;
-	boolean reported = false;
+	public boolean reported = false;
 
 	public Solution() {
 	}

@@ -7,6 +7,6 @@ class AssignmentOverDueTest {
     @org.junit.jupiter.api.Test
     void isOverDue() {
         Assignment assignment = new Assignment();
-        Assertions.assertEquals(true, assignment.IsOverDue());
+        Assertions.assertEquals (true, assignment.IsOverDue());
     }
 }

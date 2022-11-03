@@ -10,6 +10,6 @@ class GetSuggestedSolnTest {
         Solution suggestedSolution = new Solution();
         Assignment assignment = new Assignment();
         suggestedSolution = assignment.getSugSolution();
-        assertTrue((suggestedSolution.equals(assignment.suggestSolution)));
+        assertTrue ((suggestedSolution.equals(assignment.suggestSolution)));
     }
 }

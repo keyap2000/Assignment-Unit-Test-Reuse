@@ -7,6 +7,6 @@ class AddAssignmentTest {
         Assignment a = new Assignment();
         Course c = new Course();
         c.AddAssignment(a);
-        assert(c.assignmentList.contains(a));
+        assert (c.assignmentList.contains(a));
     }
 }

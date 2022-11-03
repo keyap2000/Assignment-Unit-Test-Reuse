@@ -7,6 +7,6 @@ class GetGradesOfSolutionTest {
     public void GetGrades(){
         Solution s = new Solution();
         int grades = s.getGradeInt();
-        assert(grades == s.theGrade);
+        assert (grades == s.theGrade);
     }
 }
