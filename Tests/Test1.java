@@ -17,14 +17,4 @@ public class Test1 {
                 assertEquals("Invalid credentials", exception.getMessage());
             }
         }
-
-        @Test
-        public void AddAssignmentPassTest(){
-            Date d = new Date(11/2/2022);
-            Solution s = new Solution();
-
-            Assignment a = new Assignment("1", d, s);
-            Course c = new Course("CSE515", 1);
-            c.AddAssignment(a);
-        }
 }

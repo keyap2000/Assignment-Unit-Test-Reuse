@@ -16,7 +16,7 @@ import java.io.*;
 public class Facade {
 	public int userType;
 	private Course theSelectedCourse = null;
-	private int nCourseLevel = 0;
+	public int nCourseLevel = 0;
 	ClassCourseList theCourseList;
 	Person thePerson;
 

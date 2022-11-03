@@ -19,7 +19,7 @@ public class Solution {
 	String theAuthor = "";
 	String solutionFileName = "";
 	Date theSubmittedDate = new Date();
-	int theGrade;
+	public int theGrade;
 	boolean reported = false;
 
 	public Solution() {
@@ -44,7 +44,7 @@ public class Solution {
 			return "-1";
 	}
 
-	int getGradeInt() {
+	public int getGradeInt() {
 		return theGrade;
 	}
 

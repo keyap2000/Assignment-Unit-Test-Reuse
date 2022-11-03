@@ -26,6 +26,8 @@ public class Course {
     this.courseLevel = theLevel;
     this.numOfAssignments = 0;
   }
+
+  public Course(){}
   
   public void AddAssignment(Assignment newAss) {
     assignmentList.add(newAss);
