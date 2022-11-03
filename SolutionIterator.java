@@ -15,30 +15,30 @@ public class SolutionIterator implements Iterator
 {
   SolutionList solutionlist;
 
-  int CurrentSolutionNumber=-1;
+  int currentSolutionNumber = -1;
 
   public SolutionIterator(SolutionList thesolutionlist)
   {
-    solutionlist=thesolutionlist;
+    solutionlist = thesolutionlist;
     MoveToHead();
   }
 
   public void MoveToHead()
   {
-    CurrentSolutionNumber=-1;
+    currentSolutionNumber = -1;
   }
 
   public boolean hasNext()
   {
-    return CurrentSolutionNumber < solutionlist.size() - 1;
+    return currentSolutionNumber < solutionlist.size() - 1;
   }
 
   public Object next()
   {
     if (hasNext())
     {
-      CurrentSolutionNumber ++;
-      return solutionlist.get(CurrentSolutionNumber);
+      currentSolutionNumber ++;
+      return solutionlist.get(currentSolutionNumber);
     }
     else
     {
@@ -49,20 +49,20 @@ public class SolutionIterator implements Iterator
   public Object next(String UserName)
   {
     Solution theSolution;
-    theSolution=(Solution)next();
-    while(theSolution!=null)
+    theSolution = (Solution)next();
+    while(theSolution != null)
     {
-      if(UserName.compareTo(theSolution.theAuthor)==0)
+      if(UserName.compareTo(theSolution.theAuthor) == 0)
       {
         return theSolution;
       }
-      theSolution=(Solution)next();
+      theSolution = (Solution)next();
     }
     return null;
   }
 
   public void remove()
   {
-    solutionlist.remove(CurrentSolutionNumber);
+    solutionlist.remove(currentSolutionNumber);
   }
 }

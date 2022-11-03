@@ -26,14 +26,14 @@ public class Login extends JDialog {
 	JLabel jLabel2 = new JLabel();
 	JButton loginButton = new JButton();
 	JButton buttonExit = new JButton();
-	JTextField UserNameText = new JTextField();
-	JPasswordField PasswordText = new JPasswordField();
-	JRadioButton StudentRadio = new JRadioButton();
-	JRadioButton InstructorRadio = new JRadioButton();
+	JTextField userNameText = new JTextField();
+	JPasswordField passwordText = new JPasswordField();
+	JRadioButton studentRadio = new JRadioButton();
+	JRadioButton instructorRadio = new JRadioButton();
 	ButtonGroup buttonGroup1 = new ButtonGroup();
 ////// Attributes Added By me
-	private String UserBox = null;
-	private USER_TYPE UserType = USER_TYPE.Student;
+	private String userBox = null;
+	private USER_TYPE userType = USER_TYPE.Student;
 
 	public Login() {
 		try {
@@ -68,23 +68,23 @@ public class Login extends JDialog {
 				buttonExit_actionPerformed(e);
 			}
 		});
-		UserNameText.setBounds(new Rectangle(119, 52, 144, 22));
-		PasswordText.setBounds(new Rectangle(118, 119, 147, 22));
-		StudentRadio.setSelected(true);
-		StudentRadio.setText("Student");
-		StudentRadio.setBounds(new Rectangle(37, 164, 103, 26));
-		InstructorRadio.setText("Instructor");
-		InstructorRadio.setBounds(new Rectangle(177, 162, 103, 26));
+		userNameText.setBounds(new Rectangle(119, 52, 144, 22));
+		passwordText.setBounds(new Rectangle(118, 119, 147, 22));
+		studentRadio.setSelected(true);
+		studentRadio.setText("Student");
+		studentRadio.setBounds(new Rectangle(37, 164, 103, 26));
+		instructorRadio.setText("Instructor");
+		instructorRadio.setBounds(new Rectangle(177, 162, 103, 26));
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(loginButton, null);
 		this.getContentPane().add(buttonExit, null);
-		this.getContentPane().add(UserNameText, null);
-		this.getContentPane().add(PasswordText, null);
-		this.getContentPane().add(StudentRadio, null);
-		this.getContentPane().add(InstructorRadio, null);
-		buttonGroup1.add(StudentRadio);
-		buttonGroup1.add(InstructorRadio);
+		this.getContentPane().add(userNameText, null);
+		this.getContentPane().add(passwordText, null);
+		this.getContentPane().add(studentRadio, null);
+		this.getContentPane().add(instructorRadio, null);
+		buttonGroup1.add(studentRadio);
+		buttonGroup1.add(instructorRadio);
 	}
 
 	void loginButton_actionPerformed(ActionEvent e) throws Exception {
@@ -92,21 +92,34 @@ public class Login extends JDialog {
 		m_bExit = false;
 		System.out.println("login clicked");
 		try {
-			if (StudentRadio.isSelected()) {
-				UserType = USER_TYPE.Student;
+			if (studentRadio.isSelected()) {
+				userType = USER_TYPE.Student;
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
+				userBox = userNameText.getText();
+				String PasswordBox = new String(passwordText.getPassword());
+				String LoginName = null;
+				String aline = null, UserName = null, Password = null;
+				while ((aline = file.readLine()) != null) {
+					UserName = GetUserName(aline);
+					Password = GetPassword(aline);
+					if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
+						LoginName = UserName;
+				}
+				if (LoginName != null) {
+					this.dispose();
+				}
 			} else {
-				UserType = USER_TYPE.Instructor;
+				userType = USER_TYPE.Instructor;
 				try{
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
-					UserBox = UserNameText.getText();
-					String PasswordBox = new String(PasswordText.getPassword());
+					userBox = userNameText.getText();
+					String PasswordBox = new String(passwordText.getPassword());
 					String LoginName = null;
 					String aline = null, UserName = null, Password = null;
 					while ((aline = file.readLine()) != null) {
 						UserName = GetUserName(aline);
 						Password = GetPassword(aline);
-						if (UserName.compareTo(UserBox) == 0 && Password.compareTo(PasswordBox) == 0)
+						if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 							LoginName = UserName;
 					}
 					if (LoginName != null) {
@@ -140,26 +153,26 @@ public class Login extends JDialog {
 	 * get the user name from aline UserName:Password
 	 */
 	private String GetUserName(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(0, Sep);
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(0, sep);
 	}
 
 	/*
 	 * get the password from aline UserName:Password
 	 */
 	private String GetPassword(String aline) {
-		int Sep = aline.lastIndexOf(':');
-		return aline.substring(Sep + 1, aline.length());
+		int sep = aline.lastIndexOf(':');
+		return aline.substring(sep + 1, aline.length());
 	}
 
 	/* after login get the UserName of the login interface */
 	public String GetUserName() {
-		return UserBox;
+		return userBox;
 	}
 
 	/* after login get the userType of the login interface */
 	public USER_TYPE GetUserType() {
-		return UserType;
+		return userType;
 	}
 
 	public boolean isExit() {

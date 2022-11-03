@@ -19,7 +19,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
   private boolean bSubmit=false;
   private Solution theSolution;
   private Assignment theAssignment;
-  JComboBox CombSolutionList = new JComboBox();
+  JComboBox combSolutionList = new JComboBox();
 
   JTextField tbAssignmentName = new JTextField();
   JTextField tbDueDate = new JTextField();
@@ -81,7 +81,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
         buttonClose_actionPerformed(e);
       }
     });
-    CombSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
+    combSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
     this.getContentPane().add(jLabel1, null);
     this.getContentPane().add(tbAssignmentName, null);
     this.getContentPane().add(jLabel2, null);
@@ -89,17 +89,17 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     this.getContentPane().add(jLabel3, null);
     this.getContentPane().add(tbSuggestedSolution, null);
     this.getContentPane().add(buttonClose, null);
-    this.getContentPane().add(CombSolutionList, null);
+    this.getContentPane().add(combSolutionList, null);
     this.getContentPane().add(buttonGrade, null);
     this.getContentPane().add(buttonReport, null);
   }
 
   public void ShowMenu(Assignment assignment, Person person) {
-    theAssignment=assignment;
+    theAssignment = assignment;
     Solution theSolution;
     tbAssignmentName.setText(theAssignment.assName );
 
-    DateFormat theDateFormat=DateFormat.getDateInstance(DateFormat.SHORT );
+    DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT );
     tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
     tbSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName );
     refreshSolutionList();
@@ -108,37 +108,37 @@ public class InstructorAssignmentMenu extends AssignmentMenu
 
   void buttonClose_actionPerformed(ActionEvent e) {
     theAssignment.assName = tbAssignmentName.getText() ;
-    DateFormat tempDateFormat=DateFormat.getDateInstance(DateFormat.SHORT );
+    DateFormat tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT );
     try {
-      theAssignment.dueDate=tempDateFormat.parse(tbDueDate.getText() );
+      theAssignment.dueDate = tempDateFormat.parse(tbDueDate.getText() );
     } catch (Exception ignored){};
-    theAssignment.suggestSolution.solutionFileName =tbSuggestedSolution.getText() ;
+    theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText() ;
     dispose();
   }
 
   void buttonGrade_actionPerformed(ActionEvent e) {
-    Solution theSolution=(Solution)CombSolutionList.getSelectedItem() ;
-    if (theSolution==null)
+    Solution theSolution = (Solution)combSolutionList.getSelectedItem() ;
+    if (theSolution == null)
        return;
-    SolutionGradingDlg dlg=new SolutionGradingDlg();
+    SolutionGradingDlg dlg = new SolutionGradingDlg();
     dlg.show(theSolution);
     refreshSolutionList();
   }
 
   void buttonReport_actionPerformed(ActionEvent e) {
-    SolutionIterator iter=new SolutionIterator(theAssignment.theSolutionList );
+    SolutionIterator iter = new SolutionIterator(theAssignment.theSolutionList );
     while(iter.hasNext()) {
-      Solution asolution=(Solution)iter.next();
+      Solution asolution = (Solution)iter.next();
       asolution.setReported(true);
     }
     refreshSolutionList();
   }
   private void refreshSolutionList() {
-    CombSolutionList.removeAllItems() ;
-    SolutionIterator SolIter=new SolutionIterator(theAssignment.theSolutionList );
-    while(SolIter.hasNext() ) {
-      theSolution=(Solution)SolIter.next();
-      CombSolutionList.addItem(theSolution);
+    combSolutionList.removeAllItems() ;
+    SolutionIterator solIter = new SolutionIterator(theAssignment.theSolutionList );
+    while(solIter.hasNext() ) {
+      theSolution=(Solution)solIter.next();
+      combSolutionList.addItem(theSolution);
     }
   }
 }

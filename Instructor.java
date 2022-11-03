@@ -16,7 +16,7 @@ public class Instructor extends Person {
 		if (theLevel == 0)
 		{
 			theCourseMenu = new HighLevelCourseMenu();
-		} else/// 1: LowLevel
+		} else
 		{
 			theCourseMenu = new LowLevelCourseMenu();
 		}

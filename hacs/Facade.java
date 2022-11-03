@@ -111,7 +111,7 @@ public class Facade {
 		{
 			thePerson = new Instructor();
 		}
-		thePerson.UserName = userinfoitem.strUserName;
+		thePerson.userName = userinfoitem.strUserName;
 	}
 
 	/*

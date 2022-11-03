@@ -33,7 +33,7 @@ public class Facade {
 		login.setModal(true);
 		login.setVisible(true);
 		userinfoItem.strUserName = login.GetUserName();
-		userinfoItem.UserType = login.GetUserType();
+		userinfoItem.userType = login.GetUserType();
 		return login.isExit();
 	}
 
@@ -109,14 +109,14 @@ public class Facade {
 	}
 
 	void CreateUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student)
+		if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student)
 		{
 			thePerson = new Student();
 		} else /// instructor
 		{
 			thePerson = new Instructor();
 		}
-		thePerson.UserName = userinfoitem.strUserName;
+		thePerson.userName = userinfoitem.strUserName;
 	}
 
 	/*
@@ -141,7 +141,7 @@ public class Facade {
 			{
 				strUserName = GetUserName(aline);
 				strCourseName = GetCourseName(aline);
-				if (strUserName.compareTo(thePerson.UserName) == 0) /// the UserName mateches
+				if (strUserName.compareTo(thePerson.userName) == 0) /// the userName mateches
 				{
 					theSelectedCourse = FindCourseByCourseName(strCourseName);
 					if (theSelectedCourse != null) /// Find the Course in the CourseList--->attach
@@ -156,7 +156,7 @@ public class Facade {
 	}
 
 	/*
-	 * get the user name from aline UserName:CourseName
+	 * get the user name from aline userName:CourseName
 	 */
 	private String GetUserName(String aline) {
 		int sep = aline.lastIndexOf(':');
@@ -164,7 +164,7 @@ public class Facade {
 	}
 
 	/*
-	 * get the CourseName from aline UserName:CourseName
+	 * get the CourseName from aline userName:CourseName
 	 */
 	private String GetCourseName(String aline) {
 		int sep = aline.lastIndexOf(':');
@@ -179,8 +179,8 @@ public class Facade {
 	 */
 	public boolean SelectCourse() {
 		CourseSelectDlg theDlg = new CourseSelectDlg();
-		theSelectedCourse = theDlg.ShowDlg(thePerson.CourseList);
-		thePerson.CurrentCourse = theSelectedCourse;
+		theSelectedCourse = theDlg.ShowDlg(thePerson.courseList);
+		thePerson.currentCourse = theSelectedCourse;
 		nCourseLevel = theDlg.nCourseLevel;
 		return theDlg.isLogout();
 	}
@@ -205,5 +205,4 @@ public class Facade {
 		CourseIterator iterator = new CourseIterator(theCourseList);
 		return (Course) iterator.next(strCourseName);
 	}
-
 }

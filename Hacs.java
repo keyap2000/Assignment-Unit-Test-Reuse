@@ -28,7 +28,7 @@ public class Hacs{
 				break;
 			theFacade.CreateUser(userinfoitem);
 			theFacade.AttachCourseToUser();
-			if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student)
+			if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student)
 				theFacade.Remind();
 			boolean blogout = false;
 			while (!blogout) {
