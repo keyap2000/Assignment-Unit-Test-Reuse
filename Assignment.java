@@ -16,8 +16,8 @@ public class Assignment {
 
   protected String assName;
   protected String strAssignmentFilename;
-  protected Date dueDate = new Date();
-  protected String assSpec;
+  public Date dueDate = new Date();
+  public String assSpec;
   protected SolutionList theSolutionList = new SolutionList();
   public Solution suggestSolution = new Solution();
 
