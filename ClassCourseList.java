@@ -18,7 +18,7 @@ public class ClassCourseList extends ArrayList<Course> {
 	}
 
 	//// initialize the list by reading from the file.
-	public void InitializeFromFile(String theFileName) throws IOException {
+	public void initializeFromFile(String theFileName) throws IOException {
 
 			BufferedReader file;
 			String strCourseName = null;
@@ -28,7 +28,6 @@ public class ClassCourseList extends ArrayList<Course> {
 				theCourse = new Course(strCourseName, 0);
 				add(theCourse);
 			}
-
 	}
 
 	public Course FindCourseByCourseName(String CourseName) {

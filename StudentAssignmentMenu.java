@@ -16,7 +16,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 	private boolean boolSubmit = false;
 	private Solution theSolution;
-	private Assignment theAssignment;
+	Assignment theAssignment;
 
 	JLabel lAssignmentName = new JLabel();
 	JLabel lDueDate = new JLabel();
@@ -92,11 +92,11 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 	/*
 	 * check if the student has already had a solution or not. if not , create a new
-	 * solution for the student. after showing the solution attatch the soluiton;
+	 * solution for the student. after showing the solution attach the solution;
 	 */
-	public void ShowMenu(Assignment assignment, Person thePerson) {
+	public void showMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
-		SolutionIterator theIter = theAssignment.GetSolutionIterator();
+		SolutionIterator theIter = theAssignment.getSolutionIterator();
 		theSolution = (Solution) theIter.next(thePerson.userName);
 		if (theSolution == null) {
 			tbSolution.setText("");
@@ -116,7 +116,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		if (boolSubmit) {
 			if (theSolution == null) {
 				theSolution = new Solution();
-				theAssignment.AddSolution(theSolution);
+				theAssignment.addSolution(theSolution);
 			}
 			theSolution.theAuthor = thePerson.userName;
 			theSolution.solutionFileName = tbSolution.getText();

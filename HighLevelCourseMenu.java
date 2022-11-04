@@ -14,28 +14,38 @@ public class HighLevelCourseMenu extends CourseMenu {
 	public HighLevelCourseMenu() {
 	}
 
-	void ShowMenu(Course theCourse) {
-		ShowViewButtons();
-		ShowRadios();
-		ShowComboxes();
+	void showMenu(Course theCourse) {
+		showViewButtons();
+		showRadios();
+		showComboxes();
 		setVisible(true);
 	}
 
-	void ShowAddButtons() {
+	void showAddButtons() {
+
+		int x, y, width, height;
 		assignmentAddButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				assignmentAddButton_actionPerformed(e);
 			}
 		});
 		assignmentAddButton.setText("Add");
-		assignmentAddButton.setBounds(new Rectangle(389, 54, 79, 29));
+		x = 389;
+		y = 54;
+		width = 79;
+		height = 29;
+		assignmentAddButton.setBounds(new Rectangle(x, y, width, height));
 		optionAddButton.setText("Add");
-		optionAddButton.setBounds(new Rectangle(390, 125, 79, 29));
+		x = 390;
+		y = 125;
+		width = 79;
+		height = 29;
+		optionAddButton.setBounds(new Rectangle(x, y, width, height));
 		this.getContentPane().add(assignmentAddButton, null);
 		this.getContentPane().add(optionAddButton, null);
 	}
 
-	void ShowRadios() {
+	void showRadios() {
 		assignmentRadio.setText("Assignment");
 		assignmentRadio.setBounds(new Rectangle(21, 55, 103, 26));
 		this.getContentPane().add(assignmentRadio, null);
@@ -44,7 +54,7 @@ public class HighLevelCourseMenu extends CourseMenu {
 		this.getContentPane().add(optionRadio, null);
 	}
 
-	void ShowComboxes() {
+	void showComboxes() {
 		assignmentCombox.setBounds(new Rectangle(140, 57, 126, 22));
 		optionCombo.setBounds(new Rectangle(137, 127, 126, 22));
 		this.getContentPane().add(assignmentCombox, null);
@@ -52,7 +62,7 @@ public class HighLevelCourseMenu extends CourseMenu {
 		refresh();
 	}
 
-	void ShowViewButtons() {
+	void showViewButtons() {
 		assignmentViewButton.setText("View");
 		assignmentViewButton.setBounds(new Rectangle(290, 54, 79, 29));
 		assignmentViewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +76,7 @@ public class HighLevelCourseMenu extends CourseMenu {
 		this.getContentPane().add(optionViewButton, null);
 	}
 
-	void ShowLabel() {
+	void showLabel() {
 		assignmentContentTable.setText("AssigmentContent");
 		assignmentContentTable.setBounds(new Rectangle(23, 186, 432, 99));
 		this.getContentPane().add(assignmentContentTable, null);

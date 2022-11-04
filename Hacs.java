@@ -22,22 +22,22 @@ public class Hacs{
 
 	public static void main(String[] args) throws IOException {
 		UserInfoItem userinfoitem = new UserInfoItem();
-		theFacade.CreateCourseList();
+		theFacade.createCourseList();
 		while (true) {
 			boolean bExit = false;
-			bExit = theFacade.Login(userinfoitem);
+			bExit = theFacade.login(userinfoitem);
 			if (bExit)
 				break;
-			theFacade.CreateUser(userinfoitem);
-			theFacade.AttachCourseToUser();
+			theFacade.createUser(userinfoitem);
+			theFacade.attachCourseToUser();
 			if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student)
-				theFacade.Remind();
+				theFacade.remind();
 			boolean blogout = false;
 			while (!blogout) {
-				blogout = theFacade.SelectCourse();
+				blogout = theFacade.selectCourse();
 				if (blogout)
 					break;
-				blogout = theFacade.CourseOperation();
+				blogout = theFacade.courseOperation();
 			}
 		}
 	}

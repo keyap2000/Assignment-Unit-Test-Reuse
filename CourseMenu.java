@@ -32,6 +32,11 @@ abstract public class CourseMenu extends JDialog
   JButton buttonChangeCourse = new JButton();
   JButton buttonLogout = new JButton();
 
+  int x;
+  int y;
+  int width;
+  int height;
+
   public CourseMenu() {
 
     try {
@@ -41,12 +46,18 @@ abstract public class CourseMenu extends JDialog
       e.printStackTrace();
     }
     setModal(true);
-    setSize(503,294);
+    int width = 503;
+    int height = 294;
+    setSize(width,height);
   }
 
   private void jbInit() throws Exception {
     buttonChangeCourse.setText("ChangeCourse");
-    buttonChangeCourse.setBounds(new Rectangle(101, 211, 73, 37));
+    x = 101;
+    y = 211;
+    width = 73;
+    height = 37;
+    buttonChangeCourse.setBounds(new Rectangle(x, y, width, height));
     buttonChangeCourse.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -57,7 +68,11 @@ abstract public class CourseMenu extends JDialog
     this.getContentPane().setLayout(null);
     this.setTitle("");
     buttonLogout.setText("Logout");
-    buttonLogout.setBounds(new Rectangle(267, 215, 73, 37));
+    x = 267;
+    y = 215;
+    width = 73;
+    height = 37;
+    buttonLogout.setBounds(new Rectangle(x, y, width, height));
     buttonLogout.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -77,22 +92,22 @@ abstract public class CourseMenu extends JDialog
   function of facade, after that refresh window
   */
 
-  abstract void ShowMenu(Course theCourse);
-  abstract void ShowAddButtons();
-  abstract void ShowViewButtons();
-  abstract void ShowRadios();
-  abstract void ShowComboxes();
-  abstract void ShowLabel();
+  abstract void showMenu(Course theCourse);
+  abstract void showAddButtons();
+  abstract void showViewButtons();
+  abstract void showRadios();
+  abstract void showComboxes();
+  abstract void showLabel();
 
   void assignmentAddButton_actionPerformed(ActionEvent e)
   {
-    Hacs.theFacade.AddAssignment(theCourse);
+    Hacs.theFacade.addAssignment(theCourse);
     refresh();
   }
   void assignmentViewButton_actionPerformed(ActionEvent e)
   {
     Assignment theAss=(Assignment)assignmentCombox.getSelectedItem() ;
-    Hacs.theFacade.ViewAssignment(theAss);
+    Hacs.theFacade.viewAssignment(theAss);
   }
   void refresh()
   {

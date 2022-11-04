@@ -11,7 +11,7 @@ class ClassCourseListTest {
     public void InitializeFromFileTest() {
         String filename = "";
         ClassCourseList c = new ClassCourseList();
-        assertThrows (IOException.class,()-> c.InitializeFromFile(filename));
+        assertThrows (IOException.class,()-> c.initializeFromFile(filename));
     }
 
     @org.junit.jupiter.api.Test

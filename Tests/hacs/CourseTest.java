@@ -12,7 +12,7 @@ class CourseTest {
     void AddAssignmentTest() {
         int expected = 1;
         Assignment assignment = new Assignment();
-        course.AddAssignment(assignment);
+        course.addAssignment(assignment);
         assertEquals(expected, course.assignmentList.size());
     }
 

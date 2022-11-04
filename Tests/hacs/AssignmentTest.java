@@ -1,7 +1,6 @@
 package hacs;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
@@ -11,13 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class AssignmentTest {
 
     Assignment assignment = new Assignment();
-
-    @org.junit.jupiter.api.Test
-    public void AddAssignmentPassTest(){
-        Course c = new Course();
-        c.AddAssignment(assignment);
-        assert (c.assignmentList.contains(assignment));
-    }
 
     @org.junit.jupiter.api.Test
     public void getSugSolutionTest()
@@ -37,14 +29,14 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     void isOverDue() {
-        Assertions.assertEquals (true, assignment.IsOverDue());
+        Assertions.assertEquals (true, assignment.isOverDue());
     }
 
     @org.junit.jupiter.api.Test
     public void GetSolutionIteratorTest() {
         SolutionList sl = new SolutionList();
         SolutionIterator s = new SolutionIterator(sl);
-        assertFalse (s == assignment.GetSolutionIterator());
+        assertFalse (s == assignment.getSolutionIterator());
     }
 
     @org.junit.jupiter.api.Test
@@ -63,14 +55,14 @@ class AssignmentTest {
     @org.junit.jupiter.api.Test
     public void AddSolutionTest() {
         SolutionList solutionList = new SolutionList();
-        assertFalse (solutionList.contains(assignment.AddSolution()));
+        assertFalse (solutionList.contains(assignment.addSolution()));
     }
 
     @org.junit.jupiter.api.Test
     public void setDueDateTest()
     {
         Date date = new Date();
-        assignment.SetDueDate(date);
+        assignment.setDueDate(date);
         assertTrue (date.equals(assignment.dueDate));
     }
 
@@ -78,7 +70,7 @@ class AssignmentTest {
     public void SetAssSpecTest()
     {
         String assSpecification = "";
-        assignment.SetAssSpec(assSpecification);
+        assignment.setAssSpec(assSpecification);
         assert (assSpecification.equals(assignment.assSpec));
     }
 
@@ -87,7 +79,7 @@ class AssignmentTest {
         Assignment assignment = new Assignment();
         Solution solution = new Solution();
         SolutionList solutionList = new SolutionList();
-        assignment.AddSolution(solution);
+        assignment.addSolution(solution);
         assertTrue (solutionList.contains(solution));
     }
 
@@ -97,6 +89,6 @@ class AssignmentTest {
         Assignment a = new Assignment();
         SolutionList solutionList = new SolutionList();
         SolutionIterator solutionIterator = new SolutionIterator(solutionList);
-        assertTrue (solutionIterator == a.GetSolutionIterator());
+        assertTrue (solutionIterator == a.getSolutionIterator());
     }
 }

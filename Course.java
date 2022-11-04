@@ -29,7 +29,7 @@ public class Course {
 
   public Course(){}
   
-  public void AddAssignment(Assignment newAss) {
+  public void addAssignment(Assignment newAss) {
     assignmentList.add(newAss);
   }
   

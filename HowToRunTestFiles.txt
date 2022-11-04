@@ -22,7 +22,7 @@ OK button
    course or low level course, OK and logout button
 3) After selecting OK, Course Menu dialog box opens with an option to view assignment
 4) After clicking view button, another dialog box opens whose code is written in StudentAssignmentMenu. It has fields
-like Assignment name(hidden), due date, solution, suggested solution(hidden), grade, submit and cancel button
+like Assignment name, due date, solution, suggested solution, grade, submit and cancel button
 4) If want to submit solution of that assignment then fill solution field and select submit button else select cancel button
 6) Change button will redirect to Course Select Dialog box
 7) Logout button will redirect to login page

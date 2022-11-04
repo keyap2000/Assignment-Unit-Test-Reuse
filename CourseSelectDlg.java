@@ -24,6 +24,7 @@ public class CourseSelectDlg extends JDialog {
 	JButton okButton = new JButton();
 	ButtonGroup buttonGroup1 = new ButtonGroup();
 	JButton buttonLogout = new JButton();
+	int x, y, width, height;
 
 	public CourseSelectDlg() {
 		try {
@@ -37,24 +38,48 @@ public class CourseSelectDlg extends JDialog {
 
 	private void jbInit() throws Exception {
 		this.getContentPane().setLayout(null);
-		courseNameCom.setBounds(new Rectangle(155, 41, 203, 22));
+		x = 155;
+		y = 41;
+		width = 203;
+		height = 22;
+		courseNameCom.setBounds(new Rectangle(x, y, width, height));
 		highLevelRadio.setText("HighLevel");
-		highLevelRadio.setBounds(new Rectangle(50, 87, 103, 26));
+		x = 50;
+		y = 87;
+		width = 103;
+		height = 26;
+		highLevelRadio.setBounds(new Rectangle(x, y, width, height));
 		lowLevelRadio.setToolTipText("");
 		lowLevelRadio.setSelected(true);
 		lowLevelRadio.setText("LowLevel");
-		lowLevelRadio.setBounds(new Rectangle(236, 88, 103, 26));
+		x = 236;
+		y = 88;
+		width = 103;
+		height = 26;
+		lowLevelRadio.setBounds(new Rectangle(x, y, width, height));
 		jLabel1.setText("CourseName");
-		jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
+		x = 39;
+		y = 44;
+		width = 85;
+		height = 18;
+		jLabel1.setBounds(new Rectangle(x, y, width, height));
 		okButton.setText("OK");
-		okButton.setBounds(new Rectangle(78, 139, 79, 29));
+		x = 78;
+		y = 139;
+		width = 79;
+		height = 29;
+		okButton.setBounds(new Rectangle(x, y, width, height));
 		okButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				okButton_actionPerformed(e);
 			}
 		});
 		buttonLogout.setText("Logout");
-		buttonLogout.setBounds(new Rectangle(224, 140, 73, 31));
+		x = 224;
+		y = 140;
+		width = 73;
+		height = 31;
+		buttonLogout.setBounds(new Rectangle(x, y, width, height));
 		buttonLogout.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonLogout_actionPerformed(e);
@@ -75,7 +100,7 @@ public class CourseSelectDlg extends JDialog {
 	 * return the pointer pointing to the Course object return the Course Type
 	 */
 
-	public Course ShowDlg(ClassCourseList courseList) {
+	public Course showDlg(ClassCourseList courseList) {
 
 		theCourseList = courseList;
 		CourseIterator theIterator = new CourseIterator(theCourseList);
