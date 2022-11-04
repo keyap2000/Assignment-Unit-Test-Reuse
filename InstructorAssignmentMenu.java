@@ -32,6 +32,8 @@ public class InstructorAssignmentMenu extends AssignmentMenu
   JButton buttonReport = new JButton();
   JButton buttonClose = new JButton();
 
+  int x, y, width, height;
+
   public InstructorAssignmentMenu() {
     try {
       jbInit();
@@ -42,20 +44,48 @@ public class InstructorAssignmentMenu extends AssignmentMenu
   }
   private void jbInit() throws Exception {
     jLabel1.setText("Assignment Name");
-    jLabel1.setBounds(new Rectangle(25, 31, 118, 18));
+    x = 25;
+    y = 31;
+    width = 118;
+    height = 18;
+    jLabel1.setBounds(new Rectangle(x, y, width, height));
     this.getContentPane().setLayout(null);
     tbAssignmentName.setText("jTextField1");
-    tbAssignmentName.setBounds(new Rectangle(192, 31, 341, 22));
+    x = 192;
+    y = 31;
+    width = 341;
+    height = 22;
+    tbAssignmentName.setBounds(new Rectangle(x, y, width, height));
     jLabel2.setText("Due Date");
-    jLabel2.setBounds(new Rectangle(28, 90, 113, 18));
+    x = 28;
+    y = 90;
+    width = 113;
+    height = 18;
+    jLabel2.setBounds(new Rectangle(x, y, width, height));
     tbDueDate.setText("tbDueDate");
-    tbDueDate.setBounds(new Rectangle(195, 87, 337, 22));
+    x = 195;
+    y = 87;
+    width = 337;
+    height = 22;
+    tbDueDate.setBounds(new Rectangle(x, y, width, height));
     jLabel3.setText("Suggested Solution");
-    jLabel3.setBounds(new Rectangle(28, 151, 118, 18));
+    x = 28;
+    y = 151;
+    width = 118;
+    height = 18;
+    jLabel3.setBounds(new Rectangle(x, y, width, height));
     tbSuggestedSolution.setText("jTextField2");
-    tbSuggestedSolution.setBounds(new Rectangle(197, 149, 339, 22));
+    x = 197;
+    y = 149;
+    width = 339;
+    height = 22;
+    tbSuggestedSolution.setBounds(new Rectangle(x, y, width, height));
     buttonGrade.setText("Grade");
-    buttonGrade.setBounds(new Rectangle(458, 199, 79, 29));
+    x = 458;
+    y = 199;
+    width = 79;
+    height = 29;
+    buttonGrade.setBounds(new Rectangle(x, y, width, height));
     buttonGrade.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -64,7 +94,11 @@ public class InstructorAssignmentMenu extends AssignmentMenu
       }
     });
     buttonReport.setText("Report");
-    buttonReport.setBounds(new Rectangle(365, 249, 79, 29));
+    x = 365;
+    y = 249;
+    width = 79;
+    height = 29;
+    buttonReport.setBounds(new Rectangle(x, y, width, height));
     buttonReport.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -73,7 +107,11 @@ public class InstructorAssignmentMenu extends AssignmentMenu
       }
     });
     buttonClose.setText("Close");
-    buttonClose.setBounds(new Rectangle(86, 253, 79, 29));
+    x = 86;
+    y = 253;
+    width = 79;
+    height = 29;
+    buttonClose.setBounds(new Rectangle(x, y, width, height));
     buttonClose.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -81,7 +119,11 @@ public class InstructorAssignmentMenu extends AssignmentMenu
         buttonClose_actionPerformed(e);
       }
     });
-    combSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
+    x = 32;
+    y = 204;
+    width = 413;
+    height = 22;
+    combSolutionList.setBounds(new Rectangle(x, y, width, height));
     this.getContentPane().add(jLabel1, null);
     this.getContentPane().add(tbAssignmentName, null);
     this.getContentPane().add(jLabel2, null);

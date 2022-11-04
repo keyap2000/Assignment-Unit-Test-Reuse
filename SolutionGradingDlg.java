@@ -18,10 +18,14 @@ public class SolutionGradingDlg extends JDialog {
 	JButton buttonOK = new JButton();
 	JLabel labelSolutionFileName = new JLabel();
 
+	int x, y, width, height;
+
 	public SolutionGradingDlg() {
 		try {
 			jbInit();
-			setSize(316, 186);
+			width = 316;
+			height = 186;
+			setSize(width, height);
 			setModal(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,17 +34,33 @@ public class SolutionGradingDlg extends JDialog {
 
 	private void jbInit() throws Exception {
 		jLabel1.setText("Solution File Name");
-		jLabel1.setBounds(new Rectangle(23, 30, 121, 18));
+		x = 23;
+		y = 30;
+		width = 121;
+		height = 18;
+		jLabel1.setBounds(new Rectangle(x, y, width, height));
 		this.getContentPane().setLayout(null);
-		tfGrad.setBounds(new Rectangle(25, 66, 100, 22));
+		x = 25;
+		y = 66;
+		width = 100;
+		height = 22;
+		tfGrad.setBounds(new Rectangle(x, y, width, height));
 		buttonOK.setText("OK");
-		buttonOK.setBounds(new Rectangle(217, 67, 79, 29));
+		x = 217;
+		y = 67;
+		width = 79;
+		height = 29;
+		buttonOK.setBounds(new Rectangle(x, y, width, height));
 		buttonOK.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonOK_actionPerformed(e);
 			}
 		});
-		labelSolutionFileName.setBounds(new Rectangle(212, 34, 163, 18));
+		x = 212;
+		y = 34;
+		width = 163;
+		height = 18;
+		labelSolutionFileName.setBounds(new Rectangle(x, y, width, height));
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(tfGrad, null);
 		this.getContentPane().add(labelSolutionFileName, null);

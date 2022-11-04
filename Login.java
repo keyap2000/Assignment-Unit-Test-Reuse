@@ -35,6 +35,8 @@ public class Login extends JDialog {
 	private String userBox = null;
 	private USER_TYPE userType = USER_TYPE.Student;
 
+	int x, y, width, height;
+
 	public Login() {
 		try {
 			jbInit();
@@ -47,11 +49,23 @@ public class Login extends JDialog {
 	private void jbInit() throws Exception {
 		this.getContentPane().setLayout(null);
 		jLabel1.setText("UserName");
-		jLabel1.setBounds(new Rectangle(26, 52, 80, 18));
+		x = 26;
+		y = 52;
+		width = 80;
+		height = 18;
+		jLabel1.setBounds(new Rectangle(x, y, width, height));
 		jLabel2.setText("Password");
-		jLabel2.setBounds(new Rectangle(23, 119, 80, 18));
+		x = 23;
+		y = 119;
+		width = 80;
+		height = 18;
+		jLabel2.setBounds(new Rectangle(x, y, width, height));
 		loginButton.setText("Login");
-		loginButton.setBounds(new Rectangle(31, 212, 85, 28));
+		x = 31;
+		y = 212;
+		width = 85;
+		height = 28;
+		loginButton.setBounds(new Rectangle(x, y, width, height));
 		loginButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -62,19 +76,39 @@ public class Login extends JDialog {
 			}
 		});
 		buttonExit.setText("Exit");
-		buttonExit.setBounds(new Rectangle(180, 211, 97, 28));
+		x = 180;
+		y = 211;
+		width = 97;
+		height = 28;
+		buttonExit.setBounds(new Rectangle(x, y, width, height));
 		buttonExit.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonExit_actionPerformed(e);
 			}
 		});
-		userNameText.setBounds(new Rectangle(119, 52, 144, 22));
-		passwordText.setBounds(new Rectangle(118, 119, 147, 22));
+		x = 119;
+		y = 52;
+		width = 144;
+		height = 22;
+		userNameText.setBounds(new Rectangle(x, y, width, height));
+		x = 118;
+		y = 119;
+		width = 147;
+		height = 22;
+		passwordText.setBounds(new Rectangle(x, y, width, height));
 		studentRadio.setSelected(true);
 		studentRadio.setText("Student");
-		studentRadio.setBounds(new Rectangle(37, 164, 103, 26));
+		x = 37;
+		y = 164;
+		width = 103;
+		height = 26;
+		studentRadio.setBounds(new Rectangle(x, y, width, height));
 		instructorRadio.setText("Instructor");
-		instructorRadio.setBounds(new Rectangle(177, 162, 103, 26));
+		x = 177;
+		y = 162;
+		width = 103;
+		height = 26;
+		instructorRadio.setBounds(new Rectangle(x, y, width, height));
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(jLabel2, null);
 		this.getContentPane().add(loginButton, null);
@@ -100,8 +134,8 @@ public class Login extends JDialog {
 				String LoginName = null;
 				String aline = null, UserName = null, Password = null;
 				while ((aline = file.readLine()) != null) {
-					UserName = GetUserName(aline);
-					Password = GetPassword(aline);
+					UserName = getUserName(aline);
+					Password = getPassword(aline);
 					if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 						LoginName = UserName;
 				}
@@ -110,21 +144,21 @@ public class Login extends JDialog {
 				}
 			} else {
 				userType = USER_TYPE.Instructor;
-				try{
+				try {
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
 					userBox = userNameText.getText();
 					String PasswordBox = new String(passwordText.getPassword());
 					String LoginName = null;
 					String aline = null, UserName = null, Password = null;
 					while ((aline = file.readLine()) != null) {
-						UserName = GetUserName(aline);
-						Password = GetPassword(aline);
+						UserName = getUserName(aline);
+						Password = getPassword(aline);
 						if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 							LoginName = UserName;
 					}
 					if (LoginName != null) {
 						this.dispose();
-					}else{
+					} else {
 						m_bExit = true;
 						//isExit();
 						//buttonExit_actionPerformed(e);
@@ -132,11 +166,11 @@ public class Login extends JDialog {
 					}
 
 				}
-				catch (RuntimeException exception){
+				catch (RuntimeException exception) {
 					System.out.println("invalid credentials");
 					dispose();
 				}
-				catch (FileNotFoundException ex){
+				catch (FileNotFoundException ex) {
 					System.out.println("file not found exception");
 					dispose();
 				}
@@ -152,7 +186,7 @@ public class Login extends JDialog {
 	/*
 	 * get the user name from aline UserName:Password
 	 */
-	private String GetUserName(String aline) {
+	private String getUserName(String aline) {
 		int sep = aline.lastIndexOf(':');
 		return aline.substring(0, sep);
 	}
@@ -160,18 +194,18 @@ public class Login extends JDialog {
 	/*
 	 * get the password from aline UserName:Password
 	 */
-	private String GetPassword(String aline) {
+	private String getPassword(String aline) {
 		int sep = aline.lastIndexOf(':');
 		return aline.substring(sep + 1, aline.length());
 	}
 
 	/* after login get the UserName of the login interface */
-	public String GetUserName() {
+	public String getUserName() {
 		return userBox;
 	}
 
 	/* after login get the userType of the login interface */
-	public USER_TYPE GetUserType() {
+	public USER_TYPE getUserType() {
 		return userType;
 	}
 

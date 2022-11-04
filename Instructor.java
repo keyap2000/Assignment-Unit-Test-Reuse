@@ -12,7 +12,7 @@ public class Instructor extends Person {
 		type = 1;
 	}
 
-	public CourseMenu CreateCourseMenu(Course theCourse, int theLevel) {
+	public CourseMenu createCourseMenu(Course theCourse, int theLevel) {
 		if (theLevel == 0)
 		{
 			theCourseMenu = new HighLevelCourseMenu();
@@ -23,8 +23,8 @@ public class Instructor extends Person {
 		return theCourseMenu;
 	}
 
-	public boolean ShowMenu() {
-		super.ShowMenu();
+	public boolean showMenu() {
+		super.showMenu();
 		showAddButton();
 		showViewButtons();
 		showComboxes();

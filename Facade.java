@@ -32,8 +32,8 @@ public class Facade {
 		}
 		login.setModal(true);
 		login.setVisible(true);
-		userinfoItem.strUserName = login.GetUserName();
-		userinfoItem.userType = login.GetUserType();
+		userinfoItem.strUserName = login.getUserName();
+		userinfoItem.userType = login.getUserType();
 		return login.isExit();
 	}
 
@@ -84,7 +84,7 @@ public class Facade {
 
 	public void gradeSolution(Solution theSolution) {
 		SolutionMenu solutionMenu = new SolutionMenu();
-		solutionMenu.ShowMenu(theSolution);
+		solutionMenu.showMenu(theSolution);
 	}
 
 	public void reportSolutions(Assignment theAssignment) {
@@ -104,7 +104,7 @@ public class Facade {
 
 	public void remind() {
 		Reminder theReminder = new Reminder();
-		theReminder.showReminder(thePerson.GetCourseList());
+		theReminder.showReminder(thePerson.getCourseList());
 	}
 
 	public void createUser(UserInfoItem userinfoitem) {
@@ -145,7 +145,7 @@ public class Facade {
 					theSelectedCourse = findCourseByCourseName(strCourseName);
 					if (theSelectedCourse != null) /// Find the Course in the CourseList--->attach
 					{
-						thePerson.AddCourse(theSelectedCourse);
+						thePerson.addCourse(theSelectedCourse);
 					}
 				}
 
@@ -191,8 +191,8 @@ public class Facade {
 	 */
 
 	public boolean courseOperation() {
-		thePerson.CreateCourseMenu(theSelectedCourse, nCourseLevel);
-		return thePerson.ShowMenu();//// 0: logout 1 select an other course
+		thePerson.createCourseMenu(theSelectedCourse, nCourseLevel);
+		return thePerson.showMenu();//// 0: logout 1 select an other course
 	}
 
 	/*

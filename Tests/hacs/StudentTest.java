@@ -17,7 +17,7 @@ class StudentTest {
         Course course = new Course();
         Facade facade = new Facade();
         int level = facade.nCourseLevel;
-        CourseMenu cm = student.CreateCourseMenu(course, level);
+        CourseMenu cm = student.createCourseMenu(course, level);
         assert (cm!=null);
     }
 }

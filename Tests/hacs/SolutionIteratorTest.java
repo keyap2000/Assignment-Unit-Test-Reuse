@@ -31,7 +31,7 @@ class SolutionIteratorTest {
 
     @org.junit.jupiter.api.Test
     public void moveToHeadTest() {
-        solutionIterator.MoveToHead();
+        solutionIterator.moveToHead();
         assertTrue (solutionIterator.currentSolutionNumber == -1);
     }
 }

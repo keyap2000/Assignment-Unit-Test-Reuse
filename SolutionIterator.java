@@ -20,10 +20,10 @@ public class SolutionIterator implements Iterator
   public SolutionIterator(SolutionList thesolutionlist)
   {
     solutionlist = thesolutionlist;
-    MoveToHead();
+    moveToHead();
   }
 
-  public void MoveToHead()
+  public void moveToHead()
   {
     currentSolutionNumber = -1;
   }

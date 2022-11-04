@@ -23,7 +23,7 @@ abstract public class Person {
 		courseList = new ClassCourseList();
 	}
 
-	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
+	abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
 
 	public void showAddButton() {
 		theCourseMenu.showAddButtons();
@@ -49,7 +49,7 @@ abstract public class Person {
 		return theCourseMenu.ifLogout();
 	}
 
-	public boolean ShowMenu() {
+	public boolean showMenu() {
 		Iterator<Assignment> theIter = currentCourse.assignmentList.iterator();
 		theCourseMenu.theCourse = currentCourse;
 		Assignment theAssignment;
@@ -60,11 +60,11 @@ abstract public class Person {
 		return false;
 	}
 
-	public ClassCourseList GetCourseList() {
+	public ClassCourseList getCourseList() {
 		return courseList;
 	}
 
-	public void AddCourse(Course theCourse) {
+	public void addCourse(Course theCourse) {
 		courseList.add(theCourse);
 	}
 }
