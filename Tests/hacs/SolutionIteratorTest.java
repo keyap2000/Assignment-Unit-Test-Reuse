@@ -19,7 +19,7 @@ class SolutionIteratorTest {
 
     @org.junit.jupiter.api.Test
     public void removeTest() {
-        assertThrows (IndexOutOfBoundsException.class,()-> solutionIterator.remove());
+        assertThrows (IndexOutOfBoundsException.class,() -> solutionIterator.remove());
         //assertTrue (classCourseList.contains(currentCourseNumber));
     }
 

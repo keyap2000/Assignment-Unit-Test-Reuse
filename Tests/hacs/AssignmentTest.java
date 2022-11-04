@@ -34,9 +34,9 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     public void GetSolutionIteratorTest() {
-        SolutionList sl = new SolutionList();
-        SolutionIterator s = new SolutionIterator(sl);
-        assertFalse (s == assignment.getSolutionIterator());
+        SolutionList solutionList = new SolutionList();
+        SolutionIterator solutionIterator = new SolutionIterator(solutionList);
+        assertFalse (solutionIterator == assignment.getSolutionIterator());
     }
 
     @org.junit.jupiter.api.Test
@@ -76,7 +76,6 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     public void AddAssignmentSolutionTest() {
-        Assignment assignment = new Assignment();
         Solution solution = new Solution();
         SolutionList solutionList = new SolutionList();
         assignment.addSolution(solution);
@@ -86,9 +85,8 @@ class AssignmentTest {
     @org.junit.jupiter.api.Test
     public void getSolutionIteratorTest()
     {
-        Assignment a = new Assignment();
         SolutionList solutionList = new SolutionList();
         SolutionIterator solutionIterator = new SolutionIterator(solutionList);
-        assertTrue (solutionIterator == a.getSolutionIterator());
+        assertTrue (solutionIterator == assignment.getSolutionIterator());
     }
 }

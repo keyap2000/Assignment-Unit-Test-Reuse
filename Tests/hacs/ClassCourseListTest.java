@@ -7,16 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClassCourseListTest {
 
+    ClassCourseList classCourseList = new ClassCourseList();
+
     @org.junit.jupiter.api.Test
     public void InitializeFromFileTest() {
         String filename = "";
-        ClassCourseList c = new ClassCourseList();
-        assertThrows (IOException.class,()-> c.initializeFromFile(filename));
+        assertThrows (IOException.class,()-> classCourseList.initializeFromFile(filename));
     }
 
     @org.junit.jupiter.api.Test
     public void findCourseTest() {
-        ClassCourseList classCourseList = new ClassCourseList();
         String courseName = "";
         Course course = new Course();
         assertTrue (course == classCourseList.FindCourseByCourseName(courseName));

@@ -1,6 +1,4 @@
-import hacs.Facade;
-import hacs.Reminder;
-import hacs.ReminderVisitor;
+import hacs.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -12,14 +10,19 @@ class ReminderVisitorTest {
     @org.junit.jupiter.api.Test
     void visitFacade() {
         Facade facade = new Facade();
+        reminderVisitor.visitFacade(facade);
         //assertNotNull(reminderVisitor.visitFacade(facade));
     }
 
     @Test
     void visitCourse() {
+        Course course = new Course();
+        reminderVisitor.visitCourse(course);
     }
 
     @Test
     void visitAssignment() {
+        Assignment assignment = new Assignment();
+        reminderVisitor.visitAssignment(assignment);
     }
 }

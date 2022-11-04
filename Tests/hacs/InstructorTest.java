@@ -20,7 +20,7 @@ class InstructorTest {
         Course course = new Course();
         Facade facade = new Facade();
         int level = facade.nCourseLevel;
-        CourseMenu cm = instructor.createCourseMenu(course, level);
-        assert (cm!=null);
+        CourseMenu courseMenu = instructor.createCourseMenu(course, level);
+        assert (courseMenu != null);
     }
 }
