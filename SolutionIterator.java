@@ -15,7 +15,7 @@ public class SolutionIterator implements Iterator
 {
   SolutionList solutionlist;
 
-  int currentSolutionNumber = -1;
+  public int currentSolutionNumber = -1;
 
   public SolutionIterator(SolutionList thesolutionlist)
   {

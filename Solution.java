@@ -37,7 +37,7 @@ public class Solution {
 		return (string);
 	}
 
-	String getGradeString() {
+	public String getGradeString() {
 		if (isReported())
 			return "" + theGrade;
 		else

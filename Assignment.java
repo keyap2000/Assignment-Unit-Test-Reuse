@@ -15,17 +15,13 @@ import java.text.DateFormat;
 public class Assignment {
 
   protected String assName;
-  protected String strAssignmentFilename;
+  public String strAssignmentFilename;
   public Date dueDate = new Date();
   public String assSpec;
   protected SolutionList theSolutionList = new SolutionList();
   public Solution suggestSolution = new Solution();
 
   public Assignment(){
-  }
-
-  public Assignment(String assignmentName, Date deadline, Solution suggestedSolution){
-
   }
 
   public void SetDueDate(Date theDueDate){
@@ -49,12 +45,6 @@ public class Assignment {
   ////add the theSolution to the Solutionlist
   public void AddSolution(Solution theSolution){
     theSolutionList.add(theSolution);
-  }
-
-  public void SubmitSolution(){
-  }
-
-  public void getSolutionList(){
   }
 
   public Solution getSolution(String studentname){

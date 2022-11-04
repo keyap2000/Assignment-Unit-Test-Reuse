@@ -37,7 +37,8 @@ public class Course {
     return courseName;
   }
   
-  void accept(NodeVisitor visitor) {
+  public void accept(NodeVisitor visitor) {
     visitor.visitCourse(this);
   }
+
 }

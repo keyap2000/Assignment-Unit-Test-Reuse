@@ -1,0 +1,29 @@
+In Tests folder, there is a folder named "hacs" - right click on it and select "Run all tests"
+
+Work flow of the project -
+Login page appears, enter username and password along with role by selecting appropriate radio button
+
+Login as Instructor
+1) Course Select Dialog opens, with fields like Select course from given course list, select radio button of high level
+   course or low level course, OK and logout button
+2) After selecting OK, Course Menu dialog box opens with an option to add or view previously created assignment
+3) After clicking add button, another dialog box opens whose code is written in InstructorAssignmentMenu. It has fields
+like Assignment name, due date, suggested solution, grade, report and close button
+4) If want to add new assignment then fill all the fields and select report button else select close button
+5) After clicking view button, same fields appear just with filled data
+6) Change button will redirect to Course Select Dialog box
+7) Logout button will redirect to login page
+8) They can end the session by clicking exit button
+
+Login as Student
+1) A dialog box with upcoming and overdue assignment list opens whose code is written in Reminder class; after selecting
+OK button
+2) Course Select Dialog opens, with fields like Select course from given course list, select radio button of high level
+   course or low level course, OK and logout button
+3) After selecting OK, Course Menu dialog box opens with an option to view assignment
+4) After clicking view button, another dialog box opens whose code is written in StudentAssignmentMenu. It has fields
+like Assignment name(hidden), due date, solution, suggested solution(hidden), grade, submit and cancel button
+4) If want to submit solution of that assignment then fill solution field and select submit button else select cancel button
+6) Change button will redirect to Course Select Dialog box
+7) Logout button will redirect to login page
+8) They can end the session by clicking exit button

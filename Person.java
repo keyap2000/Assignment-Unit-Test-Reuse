@@ -12,8 +12,8 @@ import java.util.*;
  */
 
 abstract public class Person {
-	int type = 0;
-	String userName;
+	public int type = 0;
+	public String userName;
 	ClassCourseList courseList;
 	CourseMenu theCourseMenu;
 	Course currentCourse;

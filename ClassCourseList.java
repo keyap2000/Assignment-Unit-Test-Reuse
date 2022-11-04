@@ -31,7 +31,7 @@ public class ClassCourseList extends ArrayList<Course> {
 
 	}
 
-	Course FindCourseByCourseName(String CourseName) {
+	public Course FindCourseByCourseName(String CourseName) {
 		int nCourseCount = size();
 		for (int i = 0; i < nCourseCount; i++) {
 			Course theCourse;
